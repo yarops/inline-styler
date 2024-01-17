@@ -42,7 +42,5 @@ $styler->media('xs')->setRules('.block', '', [
 ```
 Finally render ```<style>``` tags
 ```php
-<style>
-    <?php $styler->render() ;?>
-</style>
+<?php $styler->render() ;?>
 ```

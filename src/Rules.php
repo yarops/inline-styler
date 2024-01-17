@@ -50,14 +50,15 @@ class Rules
 	 */
 	public function setRules( string $selector, string $suffix, array $rules) : object
 	{
-		if (!empty($this->media_rule)) {
-			$this->media_show = true;
-		}
 
 		foreach ($rules as $key => $value) {
 			if (!empty($value)) {
 				$this->selectors[$selector][$key] = $value . $suffix;
 			}
+		}
+
+		if (!empty($this->media_rule && !empty($this->selectors))) {
+			$this->media_show = true;
 		}
 
 		return $this;

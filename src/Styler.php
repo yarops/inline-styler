@@ -51,20 +51,40 @@ class Styler
 	 */
 	public function render(): void
 	{
+		$styles = $this->getStyles();
+
+		if (!empty($styles)) {
+			echo "<style>{$styles}</style>";
+		}
+	}
+
+	/**
+	 * Compose all styles
+	 *
+	 * @return string
+	 */
+	public function getStyles(): string
+	{
+		$styles = '';
+
 		foreach ($this->breakpoints as $breakpoint) {
 			if ($breakpoint->media_show) {
-				echo $breakpoint->media_rule . " {";
+				$styles .= $breakpoint->media_rule . " {";
 			}
+
 			foreach ($breakpoint->selectors as $name => $rules) {
-				echo "{$name}{";
+				$styles .= "{$name}{";
 				foreach ($rules as $key => $value) {
-					echo $key . ': ' . $value . ';';
+					$styles .= $key . ': ' . $value . ';';
 				}
-				echo '}';
+				$styles .= '}';
 			}
+
 			if ($breakpoint->media_show) {
-				echo '}';
+				$styles .= '}';
 			}
 		}
+
+		return $styles;
 	}
 }
