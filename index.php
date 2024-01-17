@@ -13,14 +13,14 @@ $styler->setMedia([
 	'lg' => '@media (min-width: 1200px)'
 ]);
 
-$styler->media('all')->setRules('.block', [
-	'padding-top' => '20px',
-	'padding-bottom' => '20px',
+$styler->media('all')->setRules('.block', 'px', [
+	'padding-top' => '20',
+	'padding-bottom' => '20',
 ]);
 
-$styler->media('xs')->setRules('.block', [
-	'padding-top' => '10px',
-	'padding-bottom' => '10px',
+$styler->media('xs')->setRules('.block', 'px', [
+	'padding-top' => '10',
+	'padding-bottom' => '10',
 	'padding-left' => '',
 ]);
 ?>

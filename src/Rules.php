@@ -48,7 +48,7 @@ class Rules
 	 *
 	 * @return object $this
 	 */
-	public function setRules( string $selector, array $rules) : object
+	public function setRules( string $selector, string $suffix, array $rules) : object
 	{
 		if (!empty($this->media_rule)) {
 			$this->media_show = true;
@@ -56,7 +56,7 @@ class Rules
 
 		foreach ($rules as $key => $value) {
 			if (!empty($value)) {
-				$this->selectors[$selector][$key] = $value;
+				$this->selectors[$selector][$key] = $value . $suffix;
 			}
 		}
 
