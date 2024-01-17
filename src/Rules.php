@@ -24,9 +24,9 @@ class Rules
 	public bool $media_show = false;
 
 	/**
-	 * @var array|null
+	 * @var array
 	 */
-	public array|null $selectors = null;
+	public array $selectors = [];
 
 	/**
 	 * @param string $name
